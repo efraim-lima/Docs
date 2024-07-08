@@ -1,9 +1,6 @@
-**TOOLS**
+**CODE**
 
 .. _bookmarks:
-CODE
-==========
-
 DECOMPILER
 ----------
 `Decompiler
