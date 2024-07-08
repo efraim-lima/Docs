@@ -1,7 +1,6 @@
 **TOOLS**
 
 .. _bookmarks:
-
 CALCULO
 =========
 - `Calculadora passo a passo <https://pt.symbolab.com/solver>`__
