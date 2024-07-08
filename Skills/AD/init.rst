@@ -19,3 +19,5 @@ São objects tangíveis ou descritos como objetos tangíveis no mundo real
 - Read-only domain controller(RODC): `é uma instalação apenas de leitura do AD DS, ocorre em casos onde escritórios não possuem muitos recursos de TI (principalmente no critério de suporte)`
 - Site: `é um container de objetos, assim como computadores e serviços que são específicos àquela localização física`
 - Subnet: `é uma porção de endereçamento da rede da organização, atribuida a uma série de dispositivos naquela rede, podem haver várias subredes`
+
+.. include:: admin.rst
