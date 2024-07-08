@@ -2,8 +2,8 @@
 Portfólio de Segurança da Informação
 =============================
 
-:email: Email: `email@example.com <mailto:email@example.com>`_
-:link: LinkedIn: `Meu LinkedIn <https://www.linkedin.com/in/seu-perfil>`_
+:email: Email: `cyberetico@hotmail.com <mailto:cyberetico@hotmail.com>`_
+:link: LinkedIn: `Efraim Lima <https://www.linkedin.com/in/efraim-lima>`_
 
 Bem-vindo ao meu portfólio de Segurança da Informação. Aqui você encontrará informações sobre minhas habilidades, técnicas em segurança da informação, análise de malwares, computação forense e comandos úteis para Linux e Windows.
 
@@ -20,9 +20,11 @@ Técnicas de Segurança da Informação
 ===================================
 
 🔒 **Segurança da Informação:**
-    - Implementação de Firewalls
-    - Gerenciamento de IDS/IPS
-    - Configuração de VPNs
+    - OSINT
+    - Threat Intel
+    - Pentesting
+    - Análise e Segurança de Redes
+    - Gerenciamento de Sistemas
 
 Análise de Malwares
 ===================
@@ -30,7 +32,7 @@ Análise de Malwares
 🦠 **Análise de Malwares:**
     - Análise estática e dinâmica
     - Engenharia reversa
-    - Uso de ferramentas como IDA Pro, OllyDbg
+    - Ferramentas de 
 
 Computação Forense
 ==================
@@ -39,18 +41,6 @@ Computação Forense
     - Coleta e preservação de evidências
     - Análise de logs
     - Investigação de incidentes
-
-Comandos Úteis
-==============
-
-💻 **Comandos Úteis:**
-
-**Linux:**
-    - Git: comandos essenciais para controle de versão
-    - Tmux: gestão eficiente de sessões de terminal
-
-**Windows:**
-    - Git: uso do Git no Windows
 
 Estrutura do Projeto
 ====================
@@ -103,10 +93,6 @@ Recursos Avançados
     :alt: Logo
     :width: 200px
 
-.. code-block:: python
-
-    def exemplo():
-        print("Código de exemplo em Python")
-
 .. |emoji| image:: https://example.com/emoji.png
 
+.. include:: LICENSE
