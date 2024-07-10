@@ -46,36 +46,56 @@ Estrutura do Projeto
 ====================
 
 .. code-block:: text
-
-    ├── Commands
-    │   ├── Linux
-    │   │   ├── git
-    │   │   └── tmux
-    │   └── Windows
-    │       └── Git
-    ├── Skills
-    └── Tools
-        └── URLs
-            ├── CALCULO
-            ├── CODE
-            ├── DATA
-            ├── EMAIL
-            ├── FORENSICS
-            ├── GITHUB
-            ├── IMAGE
-            ├── INTEL
-            ├── JOBS
-            ├── LOGS
-            ├── MALWARES
-            ├── METADATA
-            ├── MONITORING
-            ├── NETWORK
-            ├── PHISHING
-            ├── PROGRAMMING
-            ├── RECON
-            ├── REVERSE ENGENEERING
-            ├── VIRTUALIZATION
-            └── WEBSITES
+	.
+	├── Commands
+	│   ├── Linux
+	│   │   ├── git
+	│   │   └── tmux
+	│   └── Windows
+	│       └── Git
+	├── Skills
+	│   ├── AD
+	│   └── CyberEtico
+	│       ├── Branding
+	│       └── Temas
+	│           └── roteiros
+	└── Tools
+	    └── URLs
+		├── CALCULO
+		├── CODE
+		│   ├── DECOMPILER
+		│   ├── DevSecOps
+		│   ├── DISASSEMBLER
+		│   └── REVERSE ENGENEERING
+		├── DATA
+		├── EMAIL
+		├── FORENSICS
+		│   ├── CRIPTOGRAFIA
+		│   ├── DECOMPILER
+		│   ├── DISASSEMBLER
+		│   ├── METADATA
+		│   ├── MOBILE
+		│   └── REVERSE ENGENEERING
+		├── GITHUB
+		├── IMAGE
+		├── INTEL
+		│   ├── GEOLOCATION
+		│   ├── LEAKED
+		│   ├── MAIL
+		│   ├── MAPS
+		│   └── PHONE
+		├── JOBS
+		├── LOGS
+		├── MALWARES
+		├── METADATA
+		├── MONITORING
+		├── NETWORK
+		├── PHISHING
+		├── PROGRAMMING
+		├── RECON
+		├── REVERSE ENGENEERING
+		├── VIRTUALIZATION
+		└── WEBSITES
 
 Recursos Avançados
 ==================
