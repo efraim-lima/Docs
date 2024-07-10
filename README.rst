@@ -45,8 +45,8 @@ Computação Forense
 Estrutura do Projeto
 ====================
 
-.. code-block:: 
-        root
+.. code-block:: text
+        .
         ├── Commands
         │   ├── Linux
         │   │   ├── git
