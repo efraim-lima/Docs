@@ -6,6 +6,9 @@ mkdir -p /opt/safing/portmaster
 #instalando o fdfind
 sudo apt install fd-find
 
+#instalando lib notify
+sudo apt install libnotify-bin
+
 # Download portmaster-start utility 
 wget -O /tmp/portmaster-start https://updates.safing.io/latest/linux_amd64/start/portmaster-start 
 sudo mv /tmp/portmaster-start /opt/safing/portmaster/portmaster-start 
