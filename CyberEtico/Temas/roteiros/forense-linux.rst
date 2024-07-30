@@ -21,7 +21,7 @@ Precisaremos coletar e compilar o máximo de informações sobre o sistema que p
 HOSTS
 ##########################
 
-Primeiro vamos levantar os detalhes de nosso sistema operacional com o comando ```uname -a```. Com este commando vamos extrair alguns detalhes sobre o sistema que são cruciais, vamos analisar o retorno em um caso típico:
+Primeiro vamos levantar os detalhes de nosso sistema operacional com o comando ``uname -a``. Com este commando vamos extrair alguns detalhes sobre o sistema que são cruciais, vamos analisar o retorno em um caso típico:
 
 .. code-block:: bash
 
@@ -37,20 +37,20 @@ Primeiro vamos levantar os detalhes de nosso sistema operacional com o comando `
 * **x86_64 x86_64 x86_64** - Indicador da Arquitetura do Sistema
 * **GNU/Linux** - Indicador de distibuição baseada no GNU
 
-Depois o comando será **_hostnamectl_**, embora o output do mesmo seja bem intuitivo, vamos analisar com mais ímpeto o seu retorno no sistema:
+Depois o comando será ``hostnamectl``, embora o output do mesmo seja bem intuitivo, vamos analisar com mais ímpeto o seu retorno no sistema:
 
 .. code-block:: bash
 
-    Static hostname: PcName
-          Icon name: computer-laptop
-            Chassis: laptop
-         Machine ID: ec8a47fe4a75fe65a4ef76505505fb80
-            Boot ID: 6009e87f78e9f7e9f7e9eaedc89e0d38
-   Operating System: Zorin OS 17.1                   
-             Kernel: Linux 6.5.0-45-generic
-       Architecture: x86-64
-    Hardware Vendor: Positivo Bahia - VAIO
-     Hardware Model: VAIO XPTO
+    Static  hostname: PcName
+           Icon name: computer-laptop
+             Chassis: laptop
+          Machine ID: ec8a47fe4a75fe65a4ef76505505fb80
+             Boot ID: 6009e87f78e9f7e9f7e9eaedc89e0d38
+    Operating System: Zorin OS 17.1                   
+              Kernel: Linux 6.5.0-45-generic
+        Architecture: x86-64
+     Hardware Vendor: Positivo Bahia - VAIO
+      Hardware Model: VAIO XPTO
 
 * **Static hostname** - identificação do sistema em uma rede e resolução de nomes de domínio.
 * **Icon name** - Representa qual o tipo de hardware.
@@ -63,7 +63,7 @@ Depois o comando será **_hostnamectl_**, embora o output do mesmo seja bem intu
 * **Hardware Vendor** - O fabricante do hardware.
 * **Hardware Model** - O modelo específico do hardware.
 
-Continuando, agora vamos usar o comando **_cat /etc/os-release_**, que trará apenas mais informmações sobe o hostame, com isso teremos o output abaixo:
+Continuando, agora vamos usar o comando ``cat /etc/os-release``, que trará apenas mais informmações sobe o hostame, com isso teremos o output abaixo:
 
 .. code-block:: bash
 
@@ -83,20 +83,22 @@ Continuando, agora vamos usar o comando **_cat /etc/os-release_**, que trará ap
 USERS
 ###################
 
-Agora vamos começar a coletar informações dos usuários do sistema para catalogar suas permissões e dados informativos, para tal começaremos com o comando **_w_**, sim, apenas a letra "w" mesmo ou, caso queira uma versão mais enxuta do output pode usar o camando **_who_**. Neste comando encontraremos o output:
+Agora vamos começar a coletar informações dos usuários do sistema para catalogar suas permissões e dados informativos, para tal começaremos com o comando ``w``, sim, apenas a letra "w" mesmo ou, caso queira uma versão mais enxuta do output pode usar o camando ``who``. Neste comando encontraremos o output:
 
 .. code-block:: bash
 
     20:33:01 up  2:30,  3 users,  load average: 0.02, 0.03, 0.00
-   USER     TTY      FROM              LOGIN@   IDLE   JCPU   PCPU WHAT
-   user1    pts/0    192.168.0.101     20:00    1:30   0.02s  0.02s -bash
-   user2    pts/1    192.168.0.102     20:10    2:00   0.01s  0.01s -bash
-   user3    pts/2    192.168.0.103     20:20    0.00s  0.00s  0.00s w
+    USER     TTY      FROM              LOGIN@   IDLE   JCPU   PCPU WHAT
+    user1    pts/0    192.168.0.101     20:00    1:30   0.02s  0.02s -bash
+    user2    pts/1    192.168.0.102     20:10    2:00   0.01s  0.01s -bash
+    user3    pts/2    192.168.0.103     20:20    0.00s  0.00s  0.00s w
 
 * **20:33:01** - Sendo o horário atual.
 * **up 2:30** - Sendo o tempo de atividade do sistema (uptime).
 * **3 users** - Que é o nNúmero de usuários logados.
 * **load average: 0.02, 0.03, 0.00** - Média de carga do sistema nos últimos 1, 5 e 15 minutos.
+
+----------------------------------------------------------------------------------
 
 * **USER** -  O nome do usuário.
 * **TTY** - O terminal ao qual o usuário está conectado.
@@ -107,22 +109,22 @@ Agora vamos começar a coletar informações dos usuários do sistema para catal
 * **PCPU** - Tempo de CPU utilizado pelo processo em execução atualmente.
 * **WHAT** - O comando ou processo que o usuário está executando atualmente.
 
-Para auditarmos tentativas de acesso do usuário e quantos processos estão rodando podemos usar o comando **_sudo lslogins_**, onde teremos o resultado a seguir:
+Para auditarmos tentativas de acesso do usuário e quantos processos estão rodando podemos usar o comando ``sudo lslogins``, onde teremos o resultado a seguir:
 
 .. code-block:: bash
 
-     UID USER              PROC PWD-LOCK PWD-DENY LAST-LOGIN GECOS
-    0 root               156        0        1            root
-    1 daemon               0        0        1            daemon
-    2 bin                  0        0        1            bin
-    3 sys                  0        0        1            sys
-    4 sync                 0        0        1            sync
-    5 games                0        0        1            games
-    6 man                  0        0        1            man
-    7 lp                   0        0        1            lp
-    8 mail                 0        0        1            mail
-    9 news                 0        0        1            news
-   10 uucp                 0        0        1            uucp
+    UID USER              PROC PWD-LOCK PWD-DENY LAST-LOGIN GECOS
+      0 root               156        0        1            root
+      1 daemon               0        0        1            daemon
+      2 bin                  0        0        1            bin
+      3 sys                  0        0        1            sys
+      4 sync                 0        0        1            sync
+      5 games                0        0        1            games
+      6 man                  0        0        1            man
+      7 lp                   0        0        1            lp
+      8 mail                 0        0        1            mail
+      9 news                 0        0        1            news
+     10 uucp                 0        0        1            uucp
 
 * **UID** - User Identifier (Identificador do Usuário)
 * **USER** - Nome do usuário
@@ -132,7 +134,7 @@ Para auditarmos tentativas de acesso do usuário e quantos processos estão roda
 * **LAST-LOGIN** - Data e hora do último login
 * **GECOS** - Informações adicionais sobre o usuário como o nome completo, telefone e detalhes de contato.om "root".
 
-Um comando que pode auxiliar neste processo é o **_sudo finger_** que trará mais informações do usuário atual, apresentanddados que podem ser utilizados para compreender o horario do ultimo login e terminais acessados;
+Um comando que pode auxiliar neste processo é o ``sudo finger`` que trará mais informações do usuário atual, apresentanddados que podem ser utilizados para compreender o horario do ultimo login e terminais acessados;
 
 .. code-block:: bash
 
@@ -150,11 +152,12 @@ Um comando que pode auxiliar neste processo é o **_sudo finger_** que trará ma
 
 BEHAVIOR
 #####################
+
 Para termos maior acurácia neste momento, precisamos ter ferramentar para detectar o comportamento dos usuários no sistema (que podem até ser aduterados, por isso existe todo um processo a ser seguido antes que uma perícia seja intaurada).
 
 Os comandos abaixo levantarão o comportamento do sistema atrelado a dados como IPs e usernames para que possamos triangular as ações efetuadas no sistema.
 
-Um comando que gosto de usar para auditar eventos no sistema é o **_last -Fxiw_**, onde encontraria output semelhante a este:
+Um comando que gosto de usar para auditar eventos no sistema é o ``last -Fxiw``, onde encontraria output semelhante a este:
 
 .. code-block:: bash
 
@@ -169,7 +172,7 @@ Aqui vamos separar por coluna para uma melhor compreensão de cada evento (linha
 * **Data** - Apresenta data e hora do início e horário do evento ou sessão, após o héfen "-" é apresentado a data e hora finais.
 * **Período** - O período em que este evento durou (no formto hh:mm).
 
-Agora, para auditarmos o comportamento do usuário de forma mais acurada ainda podemos utilizar o comando **_cat /var/log/auth.log_** que pode ser ainda mais potencializado em conjunto com o "grep" para detectarmos ações específicas em meio aos logs, assim como **_grep -a sudo /var/log/auth.log_** que retornará:
+Agora, para auditarmos o comportamento do usuário de forma mais acurada ainda podemos utilizar o comando ``cat /var/log/auth.log`` que pode ser ainda mais potencializado em conjunto com o "grep" para detectarmos ações específicas em meio aos logs, assim como ``grep -a sudo /var/log/auth.log`` que retornará:
 
 .. code-block:: bash
 
@@ -192,7 +195,7 @@ timos ou podem estar comprometendo o sistema.
 
 Para isso temos alguns comandos que podem ser emitidos no terminal para conseguirmos estes dados como informação.
 
-Um primeiro comando que podemos emitir é o **_lsmod_** para verificarmos, na ordem do output, os módulos do Kernel, seu tamamho e quantidade em uso.
+Um primeiro comando que podemos emitir é o ``lsmod`` para verificarmos, na ordem do output, os módulos do Kernel, seu tamamho e quantidade em uso.
 
 .. code-block:: bash
 
@@ -201,5 +204,5 @@ Um primeiro comando que podemos emitir é o **_lsmod_** para verificarmos, na or
    parport_pc             53248  0
    vmmon                 167936  0
 
-Também precisamos analisar todos pacotes instalados, pode haver algo no meio, pra isso podemos usar comandos como **_dpkg -l_**, **_dpkg-query -l_**, **_apt list --installed_**, **_flatpak list_** e/ou **_snap list_** e verificar cada item e sua proveniência.
+Também precisamos analisar todos pacotes instalados, pode haver algo no meio, pra isso podemos usar comandos como ``dpkg -l``, ``dpkg-query -l``, ``apt list --installed``, ``flatpak list`` e/ou ``snap list`` e verificar cada item e sua proveniência.
 
