@@ -23,7 +23,8 @@ HOSTS
 
 Primeiro vamos levantar os detalhes de nosso sistema operacional com o comando **_uname -a_**. Com este commando vamos extrair alguns detalhes sobre o sistema que são cruciais, vamos analisar o retorno em um caso típico:
 
-.. code-block::
+.. code-block:: bash
+    :linenos:
 
    Linux PcName 5.19.0-000-generic #202212242330 SMP PREEMPT_DYNAMIC Mon Jul 15 16:40:02 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
 
@@ -40,6 +41,7 @@ Primeiro vamos levantar os detalhes de nosso sistema operacional com o comando *
 Depois o comando será **_hostnamectl_**, embora o output do mesmo seja bem intuitivo, vamos analisar com mais ímpeto o seu retorno no sistema:
 
 .. code-block:: bash
+    :linenos:
 
     Static hostname: PcName
           Icon name: computer-laptop
@@ -66,6 +68,8 @@ Depois o comando será **_hostnamectl_**, embora o output do mesmo seja bem intu
 Continuando, agora vamos usar o comando **_cat /etc/os-release_**, que trará apenas mais informmações sobe o hostame, com isso teremos o output abaixo:
 
 .. code-block:: bash
+    :linenos:
+
    PRETTY_NAME="Zorin OS 17.1"
    NAME="Zorin OS"
    VERSION_ID="17"
@@ -85,6 +89,8 @@ USERS
 Agora vamos começar a coletar informações dos usuários do sistema para catalogar suas permissões e dados informativos, para tal começaremos com o comando **_w_**, sim, apenas a letra "w" mesmo ou, caso queira uma versão mais enxuta do output pode usar o camando **_who_**. Neste comando encontraremos o output:
 
 .. code-block:: bash
+    :linenos:
+
     20:33:01 up  2:30,  3 users,  load average: 0.02, 0.03, 0.00
    USER     TTY      FROM              LOGIN@   IDLE   JCPU   PCPU WHAT
    user1    pts/0    192.168.0.101     20:00    1:30   0.02s  0.02s -bash
@@ -108,6 +114,8 @@ Agora vamos começar a coletar informações dos usuários do sistema para catal
 Para auditarmos tentativas de acesso do usuário e quantos processos estão rodando podemos usar o comando **_sudo lslogins_**, onde teremos o resultado a seguir:
 
 .. code-block:: bash
+    :linenos:
+
      UID USER              PROC PWD-LOCK PWD-DENY LAST-LOGIN GECOS
     0 root               156        0        1            root
     1 daemon               0        0        1            daemon
@@ -132,6 +140,8 @@ Para auditarmos tentativas de acesso do usuário e quantos processos estão roda
 Um comando que pode auxiliar neste processo é o **_sudo finger_** que trará mais informações do usuário atual, apresentanddados que podem ser utilizados para compreender o horario do ultimo login e terminais acessados;
 
 .. code-block:: bash
+    :linenos:
+
    Login     Name       Tty      Idle  Login Time   Office     Office Phone
    efraim    Efraim    * :0            Jul 29 09:12 (:0)
    efraim    Efraim     pts/2          Jul 29 20:39
@@ -153,6 +163,8 @@ Os comandos abaixo levantarão o comportamento do sistema atrelado a dados como 
 Um comando que gosto de usar para auditar eventos no sistema é o **_last -Fxiw_**, onde encontraria output semelhante a este:
 
 .. code-block:: bash
+    :linenos:
+
    runlevel (to lvl 5)   0.0.0.0          Fri Jun 28 22:14:29 2024 - Sat Jun 29 21:40:01 2024  (23:25)
    reboot   system boot  0.0.0.0          Fri Jun 28 22:14:18 2024 - Sat Jun 29 21:40:01 2024  (23:25)
 
@@ -166,6 +178,8 @@ Aqui vamos separar por coluna para uma melhor compreensão de cada evento (linha
 Agora, para auditarmos o comportamento do usuário de forma mais acurada ainda podemos utilizar o comando **_cat /var/log/auth.log_** que pode ser ainda mais potencializado em conjunto com o "grep" para detectarmos ações específicas em meio aos logs, assim como **_grep -a sudo /var/log/auth.log_** que retornará:
 
 .. code-block:: bash
+    :linenos:
+
    Jul 29 21:54:30 zorin sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
    Jul 29 21:54:30 zorin sudo: pam_unix(sudo:session): session closed for user root
 
@@ -188,6 +202,8 @@ Para isso temos alguns comandos que podem ser emitidos no terminal para consegui
 Um primeiro comando que podemos emitir é o **_lsmod_** para verificarmos, na ordem do output, os módulos do Kernel, seu tamamho e quantidade em uso.
 
 .. code-block:: bash
+    :linenos:
+
    Module                  Size  Used by
    vmnet                  73728  17
    parport_pc             53248  0
