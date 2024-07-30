@@ -162,11 +162,12 @@ Um comando que gosto de usar para auditar eventos no sistema é o **_last -Fxiw_
    reboot   system boot  0.0.0.0          Fri Jun 28 22:14:18 2024 - Sat Jun 29 21:40:01 2024  (23:25)
 
 Aqui vamos separar por coluna para uma melhor compreensão de cada evento (linha):
-1. **Tipo de Evento** - podemos ter diversos tipos de eventos, vale a pena começar a analise por este campo
-2. **Informações Adicionais** - uma breve descrição do ocorrido
-3. **IP ou hostname** - Apresenta o IP de origem da sessão, eventos em IP 0.0.0.0 são representam um evento local
-4. **Data** - Apresenta data e hora do início e horário do evento ou sessão, após o héfen "-" é apresentado a data e hora finais
-5. **Período** - O período em que este evento durou (no formto hh:mm)
+
+* **Tipo de Evento** - podemos ter diversos tipos de eventos, vale a pena começar a analise por este campo.
+* **Informações Adicionais** - uma breve descrição do ocorrido.
+* **IP ou hostname** - Apresenta o IP de origem da sessão, eventos em IP 0.0.0.0 são representam um evento local.
+* **Data** - Apresenta data e hora do início e horário do evento ou sessão, após o héfen "-" é apresentado a data e hora finais.
+* **Período** - O período em que este evento durou (no formto hh:mm).
 
 Agora, para auditarmos o comportamento do usuário de forma mais acurada ainda podemos utilizar o comando **_cat /var/log/auth.log_** que pode ser ainda mais potencializado em conjunto com o "grep" para detectarmos ações específicas em meio aos logs, assim como **_grep -a sudo /var/log/auth.log_** que retornará:
 
