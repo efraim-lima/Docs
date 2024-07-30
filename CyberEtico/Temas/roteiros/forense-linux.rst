@@ -21,7 +21,7 @@ Precisaremos coletar e compilar o máximo de informações sobre o sistema que p
 HOSTS
 ##########################
 
-Primeiro vamos levantar os detalhes de nosso sistema operacional com o comando **_uname -a_**. Com este commando vamos extrair alguns detalhes sobre o sistema que são cruciais, vamos analisar o retorno em um caso típico:
+Primeiro vamos levantar os detalhes de nosso sistema operacional com o comando ```uname -a```. Com este commando vamos extrair alguns detalhes sobre o sistema que são cruciais, vamos analisar o retorno em um caso típico:
 
 .. code-block:: bash
 
