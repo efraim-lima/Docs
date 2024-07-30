@@ -24,6 +24,7 @@ HOSTS
 Primeiro vamos levantar os detalhes de nosso sistema operacional com o comando **_uname -a_**. Com este commando vamos extrair alguns detalhes sobre o sistema que são cruciais, vamos analisar o retorno em um caso típico:
 
 .. code-block::
+
    Linux PcName 5.19.0-000-generic #202212242330 SMP PREEMPT_DYNAMIC Mon Jul 15 16:40:02 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
 
 * **Linux** - Tipo do sistema
@@ -39,6 +40,7 @@ Primeiro vamos levantar os detalhes de nosso sistema operacional com o comando *
 Depois o comando será **_hostnamectl_**, embora o output do mesmo seja bem intuitivo, vamos analisar com mais ímpeto o seu retorno no sistema:
 
 .. code-block:: bash
+
     Static hostname: PcName
           Icon name: computer-laptop
             Chassis: laptop
