@@ -186,8 +186,49 @@ Aqui encontraremos os seguintes elementos:
 * **Auth Module** - é o modulo de autenticação responsável pelo evento
 * **Tipo de Evento** - seria como um campo de detalhes do evento
 
+Tendo uma idéia do comportamento geral do usuário podemos agora buscar por pistas de seu comportamento perante execuções no sistema operacional, isso significa que iremos auditar suas ações em função de sessões de boot do sistema.
+Para tal, utilizaremos comandos como ``ps -p`` e ``systemd-cgls`` mas em função de uma sessão específica do boot que poderia ser a do dia em que o incidente ocorreu ou então de um dia compreendido em um range de datas cujo o incidente possa ter ocorrido.
 
-DEPENDÊNCIAS
+Para conseguirmos as datas e os Boot ID correspondentes a essas datas usaremos os comandos ``journalctl --list-boots``, note que para ter efetividade neste comando é necessário ter iniciado a captura de Boot IDs e a persistência dos logs no sistema no sistema, é muito importante que faça o processo de persistência de Logs no sistema seja configurado no início da utilização do sistema operacional, uma dica seria criar um shell script de inicialização, mas para fazer isso manualmente basta editar o arquivo "/etc/systemd/journald.conf" através do parâmetro mencionado abaixo:
+
+.. code-block:: bash
+
+   [Journal]
+   Storage=persistent
+
+Caso esta linha esteja comentada, descomente-a e caso não exista, crie.
+
+1. **Identificando a sessão de boot correspondente ao incidente:**
+Com a persistencia de logs agora conseguimos analisar os logs de acordo com o boot ID e seu timestamp, selecionando a data em que houve o incidente no sistema, para encontrar o boot ID já sabemos, basta usar o commando ``journalctl --boot-list`` e coletar o boot ID equivalente a data do incidennte (ou do evento que precisa analisar); tendo o Boot ID em mãos insira no comando ``journalctl -b <boot ID>``, com isso terá acesso a todos os logs gerados naquele dia de forma completa.
+Mas mesmo tendo acesso aos logs pode ser difícil extrair dados no meio do volume de dados coletados, para isso podemmos usar comandos e prompts para facilitar na busca, segue abaixo alguns comandos que podem ser utilizados para encontrarmos dados que poderiam ser coerentes.
+
+.. code-block:: bash
+
+   journalctl -b <boot_id> | grep -i 'COMMAND_NAME'
+   journalctl -b <boot_id> | grep -i 'USER_NAME'
+   journalctl -b <boot_id> | grep -i 'net'
+   journalctl -b <boot_id> | grep -i 'dhcp'
+   journalctl -b <boot_id> | grep -i 'interface'
+   journalctl -b <boot_id> | grep -i 'iptables'
+   journalctl -b <boot_id> | grep -i 'socket'
+   journalctl -b <boot_id> | grep -i 'Started\|Stopped\|Enabled\|Disabled'
+   journalctl -b <boot_id> | grep -i 'modification\|changed\|updated'
+   journalctl -b <boot_id> | grep -i 'warning\|err\|critial\|alert\|emerg'
+   journalctl -b <boot_id> -p err
+   
+   #pequena pausa para informar que pra analisar serviços do sistema vale a pena ter uma idéia de quais são os serviços presentes no sistema
+   systemctl list-unit-files --type=service
+   journalctl -b <boot_id> -u <service_name>.service
+
+
+
+
+
+
+
+
+
+DEPENDENCIES
 ####################
 
 Pode ser imprescindível analizar o quê está instalado no sistema, se os apps são legí
