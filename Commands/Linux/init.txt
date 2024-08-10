@@ -1,0 +1,12 @@
+Ferramentas que precisam ser instaladas e conferidas:
+
+AnyDesk
+Packet Tracer
+Calibre
+Shotcut
+glaxnimate
+gns3
+vscode
+vmare
+virtual box
+vivladi
