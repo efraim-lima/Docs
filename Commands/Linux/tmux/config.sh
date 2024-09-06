@@ -2,7 +2,7 @@ unbind r
 bind r source-file ~/.tmux.conf
 
 #act like vi
-setw -g mode-keys vi
+set -g mode-keys vi
 bind-key h select-pane -L
 bind-key j select-pane -D
 bind-key k select-pane -U
@@ -47,4 +47,3 @@ set -g @tmux2k-military-time true
 set -g @tmux2k-network-name "wlo1"
 
 run '~/.tmux/plugins/tpm/tpm'
-
